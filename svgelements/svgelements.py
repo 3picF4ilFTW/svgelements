@@ -9155,7 +9155,7 @@ class SVG(Group):
                         height = s.viewbox.height if s.viewbox is not None else 1000
 
                     s.render(ppi=ppi, width=width, height=height, viewbox=s.viewbox)
-                    height, width = s.width, s.height
+                    width, height = s.width, s.height
                     if s.viewbox is not None:
                         try:
                             if s.height == 0 or s.width == 0:
