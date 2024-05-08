@@ -8413,6 +8413,13 @@ class Text(SVGElement, GraphicObject, Transformable):
     def reify(self):
         GraphicObject.reify(self)
         Transformable.reify(self)
+        
+        matrix = self.transform
+        p = Point(self.x, self.y) * matrix
+        self.x = p.x
+        self.y = p.y
+
+        return self
 
     def render(self, **kwargs):
         GraphicObject.render(self, **kwargs)
